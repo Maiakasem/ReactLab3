@@ -14,18 +14,18 @@ function App() {
 
     {isRouteDefined && <Nav />}
        <div className="container mt-3">
-        <Routes>
-          
-            
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/add" element={<AddProduct />} />
+       <Routes>
+            {isRouteDefined ? (
+              <>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/add" element={<AddProduct />} />
+              </>
+            ) : (
               <Route path="*" element={<Error />} />
-          
-            
-          
-        </Routes>
+            )}
+          </Routes>
       </div>
     </BrowserRouter>
   );
